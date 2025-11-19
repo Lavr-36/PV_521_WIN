@@ -6,13 +6,36 @@
 CONST CHAR* g_sz_VALUES[] = { "This", "is", "my", "first", "Combo", "Box" };
 
 BOOL CALLBACK DlgProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam);
+/*
+---------------------------------
+HWND hwnd - Handler to Window, предтавл€ет окно.
+Handler (руко€ть) - это дескриптор окна.
+hwnd нужен дл€ того чтобы обратитьс€ к окну.
+---------------------------------
+UINT uMsg (Message) - это сообщение.	SendMessage
+---------------------------------
+WPARAM wParam, LPARAM lParam - параметры сообщени€. 0 или NULL
+---------------------------------
+EditControl, ComboBox, Button
+WM_ (WindowMessage) - применимы к любому окну;
+EM_ (EditMessage)	- применимы только к EditControl;
+CB_ (ComboBoxMsg)	- применимо только к ComboBox;
+---------------------------------
+ƒочерние элементы окна, такие как кнопки, текстовые пол€, выпадающие списки часто называют Controls,
+поскольку это элементы управлени€ окном.
+јбсолютно у каждого элемента управлени€ есть ID-реурса (ResourceID):IDOK, IDC_EDIT_LOGIN, IDC_COMBO....
+ResourceID - это самое обычное число типа DWORD (INT)
+ѕо ResourceID всегда можно получить HWND соответствующего сообщени€ при помощи функции
+	GetDlgItem(hwnd,RESOURCE_ID)
+---------------------------------
+*/
 
 INT WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInst, LPSTR lpCmdLine, INT nCmdShow)
 {
 	DialogBoxParam(hInstance, MAKEINTRESOURCE(IDD_DIALOG1), NULL, DlgProc, 0);
 	return 0;
 }
-
+void Function(bool flag, int number, char symbol, double value);
 BOOL CALLBACK DlgProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 {
 	switch (uMsg)
@@ -33,7 +56,7 @@ BOOL CALLBACK DlgProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 		case IDOK:
 		{
 			CONST INT SIZE = 256;
-			CHAR sz_buffer[SIZE]{};	//sz_ - String Zero (NULL Terminated Line)
+			CHAR sz_buffer[SIZE]{};		//sz_ - String Zero (NULL Terminated Line)
 			CHAR sz_message[SIZE]{};	//sz_ - String Zero (NULL Terminated Line)
 			HWND hCombo = GetDlgItem(hwnd, IDC_COMBO1);
 			INT i = SendMessage(hCombo, CB_GETCURSEL, 0, 0);	//GetCurrentSelection - ѕолучить текущий выбранный элемент

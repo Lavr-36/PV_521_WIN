@@ -22,12 +22,15 @@ INT WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInst, LPSTR lpCmdLine, IN
 	//MB_ - MessageBox;
 	DialogBoxParam(hInstance, MAKEINTRESOURCE(IDD_DIALOG1), NULL, DlgProc, 0);
 	return 0;
+	int a = 2;
+	int* pa = &a;	//pa - Pointer to 'a'
 }
 
 BOOL CALLBACK DlgProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 {
 	switch (uMsg)
 	{
+		//WM_ - Window Message
 	case WM_INITDIALOG:	//Выполняется 1 раз, при запуске окна.
 	{
 		HICON hIcon = LoadIcon(GetModuleHandle(NULL), MAKEINTRESOURCE(IDI_ICON1));
@@ -41,16 +44,21 @@ BOOL CALLBACK DlgProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 		{
 		case IDC_EDIT_LOGIN:
 		{
-			HWND hEditLogin = GetDlgItem(hwnd, IDC_EDIT_LOGIN);
+			//HWND hEditLogin = GetDlgItem(hwnd, IDC_EDIT_LOGIN);
 			CONST INT SIZE = 256;
 			CHAR sz_buffer[SIZE] = "";
-			SendMessage(hEditLogin, WM_GETTEXT, SIZE, (LPARAM)sz_buffer);
+			SendMessage((HWND)lParam, WM_GETTEXT, SIZE, (LPARAM)sz_buffer);
+			//SendMessage(hEditLogin, WM_GETTEXT, SIZE, (LPARAM)sz_buffer);
 			if (HIWORD(wParam) == EN_SETFOCUS && strcmp(sz_buffer, g_sz_INVITE) == 0)
 			{
-				SendMessage(hEditLogin, WM_SETTEXT, 0, (LPARAM)"");
+				//EN_ - EditNotification
+				//EM_ - EditMessage
+				SendMessage((HWND)lParam, WM_SETTEXT, 0, (LPARAM)"");
+				//SendMessage(hEditLogin, WM_SETTEXT, 0, (LPARAM)"");
 			}
 			if (HIWORD(wParam) == EN_KILLFOCUS && strcmp(sz_buffer, "") == 0)
-				SendMessage(hEditLogin, WM_SETTEXT, 0, (LPARAM)g_sz_INVITE);
+				SendMessage((HWND)lParam, WM_SETTEXT, 0, (LPARAM)g_sz_INVITE);
+				//SendMessage(hEditLogin, WM_SETTEXT, 0, (LPARAM)g_sz_INVITE);
 		}
 		break;
 		case IDC_BUTTON_COPY:
