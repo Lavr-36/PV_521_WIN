@@ -4,6 +4,16 @@ https://www.youtube.com/playlist?list=PLeqyOOqxeiIPna7oEwBxnlj3yEEZYFBWx
 Git/GitHub:
 https://www.youtube.com/watch?v=uFEo1zCePJk&list=PLeqyOOqxeiIP4IcNHD37jcaLVmXEbFd1k&index=22&t=2777s
 
+Books:
+https://winprog.org/tutorial/
+
+TODO:
+1. При запуске программы окно должно появляться ровно посередине экрана и занимать 75% экрана;
+2. При перемещении окна и изменении его размеров положение окна на экране и его размер 
+   должны отображаться в строке заголовка;
+   -------------------------------------------------
+3. Проверить отображается ли наш курсор над дочерними окнами;
+
 DONE:
 1. В Solution 'WinAPI' добавить проект 'ListBox', и выполнить с ним все те же манипуляции что и в проекте 'ComboBox'; DONE
 2. В проекте 'ListBox' в окно добавить дву кнопки 'Добавить' и 'Удалить'.
