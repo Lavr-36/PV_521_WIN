@@ -7,11 +7,14 @@ https://www.youtube.com/watch?v=uFEo1zCePJk&list=PLeqyOOqxeiIP4IcNHD37jcaLVmXEbF
 Books:
 https://winprog.org/tutorial/
 https://learn.microsoft.com/en-us/windows/win32/winmsg/about-messages-and-message-queues
+https://github.com/maybez/maybe/blob/master/Books/windows/Windows%20Via%20C／C++,Fifth%20Edition%20.pdf
 
 https://learn.microsoft.com/ru-ru/sysinternals/downloads/zoomit
 
 TODO:
-1. Организовать вычисления;
+1. При нажатии кнопки на калькуляторе мышкой сбивается ввод с клавиатуры.
+   Эту проблему нужно решить;
+2. Организовать вычисления;
 
 DONE:
 1. При запуске программы окно должно появляться ровно посередине экрана и занимать 75% экрана;	DONE
