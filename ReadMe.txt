@@ -12,6 +12,10 @@ https://github.com/maybez/maybe/blob/master/Books/windows/Windows%20Via%20C／C+
 https://learn.microsoft.com/ru-ru/sysinternals/downloads/zoomit
 
 TODO:
+1. Найти подводные камни в вычислениях;
+2. 
+
+DONE:
 1. При нажатии кнопки на калькуляторе мышкой сбивается ввод с клавиатуры.
    Эту проблему нужно решить;
 2. Организовать вычисления;
