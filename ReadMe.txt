@@ -12,6 +12,10 @@ https://github.com/maybez/maybe/blob/master/Books/windows/Windows%20Via%20C／C+
 https://learn.microsoft.com/ru-ru/sysinternals/downloads/zoomit
 
 TODO:
+1. Добить функцию SetSkin();
+2. Фон окна должен соответствовать выбранной теме;
+
+DONE:
 1. Найти подводные камни в вычислениях;
 2. 
 
