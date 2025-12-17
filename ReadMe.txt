@@ -20,7 +20,9 @@ https://learn.microsoft.com/en-us/cpp/preprocessor/token-pasting-operator-hash-h
 TODO:
 1. Вынести темы в соответствующие DLL-файлы: "square_blue.dll" и "metal_mistral.dll":
 	https://learn.microsoft.com/sr-cyrl-rs/cpp/build/creating-a-resource-only-dll?view=msvc-170
-2. Сделать для калькулятора программу установки;
+2. Создать свою тему для калькулфтора;
+3. Создать DLL-файл с кастомными шрифтами;
+4. Сделать для калькулятора программу установки;
 
 DONE:
 1. Добить функцию SetSkin();	DONE
