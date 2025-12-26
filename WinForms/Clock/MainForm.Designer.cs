@@ -198,6 +198,7 @@
             this.tsmiAutoStart.Name = "tsmiAutoStart";
             this.tsmiAutoStart.Size = new System.Drawing.Size(180, 22);
             this.tsmiAutoStart.Text = "Auto start";
+            this.tsmiAutoStart.CheckedChanged += new System.EventHandler(this.tsmiAutoStart_CheckedChanged);
             // 
             // toolStripSeparator6
             // 
@@ -263,7 +264,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(318, 365);
+            this.ClientSize = new System.Drawing.Size(284, 365);
             this.Controls.Add(this.btnHideControls);
             this.Controls.Add(this.cbShowWeekday);
             this.Controls.Add(this.cbShowDate);
