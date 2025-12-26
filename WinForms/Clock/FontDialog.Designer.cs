@@ -36,11 +36,13 @@
 			// 
 			// comboBoxFont
 			// 
+			this.comboBoxFont.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.comboBoxFont.FormattingEnabled = true;
 			this.comboBoxFont.Location = new System.Drawing.Point(13, 13);
 			this.comboBoxFont.Name = "comboBoxFont";
 			this.comboBoxFont.Size = new System.Drawing.Size(452, 21);
 			this.comboBoxFont.TabIndex = 0;
+			this.comboBoxFont.SelectedIndexChanged += new System.EventHandler(this.comboBoxFont_SelectedIndexChanged);
 			// 
 			// labelExample
 			// 
@@ -61,6 +63,7 @@
 			this.buttonOK.TabIndex = 2;
 			this.buttonOK.Text = "OK";
 			this.buttonOK.UseVisualStyleBackColor = true;
+			this.buttonOK.Click += new System.EventHandler(this.buttonOK_Click);
 			// 
 			// buttonCancel
 			// 
@@ -84,6 +87,7 @@
 			this.Name = "FontDialog";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
 			this.Text = "FontDialog";
+			this.Load += new System.EventHandler(this.FontDialog_Load);
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
