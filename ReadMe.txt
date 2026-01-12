@@ -18,6 +18,13 @@ Preprocessor:
 https://learn.microsoft.com/en-us/cpp/preprocessor/token-pasting-operator-hash-hash?view=msvc-170
 
 TODO:
+1. Окно 'Alarms' должно открываться рядом с часами;
+2. Окно 'AlarmDialog' должно открываться ровно по середине окна 'Alarms';
+3. Накачать музона в разных форматах: mp3, Flac, APE, WMA....., 
+   добавить фильтры для этих форматов, и проветрить эти фильтры;
+4. https://stackoverflow.com/questions/1892595/openfiledialog-always-shows-url-internet-shortcut-files
+
+DONE:
 1. Добавить будильники. Должна быть возможность выствлять будильник на определенную дату, 
    и на определенные дни недели. Если ни дата и дни недели не выбраны, то будильник звонит каждый день;
 2. Пользователь должен иметь возможность выбирать мелодию сигнала;
