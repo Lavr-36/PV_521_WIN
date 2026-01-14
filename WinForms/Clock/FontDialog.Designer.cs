@@ -2,6 +2,7 @@
 {
 	partial class FontDialog
 	{
+		//.
 		/// <summary>
 		/// Required designer variable.
 		/// </summary>
