@@ -22,6 +22,7 @@ namespace Clock
 		private void buttonAdd_Click(object sender, EventArgs e)
 		{
 			alarm.ShowDialog();
+			
 		}
 	}
 }
