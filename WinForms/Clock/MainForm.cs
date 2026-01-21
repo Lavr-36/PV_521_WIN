@@ -38,6 +38,7 @@ namespace Clock
 			alarms = new AlarmsForm();
 			alarm = null;
 			LoadSettings();
+			axWindowsMediaPlayer.Visible = false;
 		}
 		void SetVisibility(bool visible)
 		{
@@ -121,8 +122,8 @@ namespace Clock
 				labelTime.Text += $"\n{DateTime.Now.DayOfWeek}";
 			if (
 				alarm != null
-				&&(
-					alarm.Date == DateTime.MaxValue ? 
+				&& (
+					alarm.Date == DateTime.MaxValue ?
 					alarm.Days.Contains((byte)DateTime.Now.DayOfWeek) :
 					CompareDates(alarm.Date, DateTime.Now)
 				)
@@ -130,11 +131,27 @@ namespace Clock
 				&& alarm.Time.Minutes == DateTime.Now.Minute
 				&& alarm.Time.Seconds == DateTime.Now.Second
 				)
-				MessageBox.Show(alarm.ToString());
+				PlayAlarm();
+				//MessageBox.Show(alarm.ToString());
 			if (DateTime.Now.Second % 5 == 0) alarm = FindNextAlarm();
 			notifyIcon.Text = labelTime.Text;
 			//////////////////////////////////////
 			//Console.WriteLine();
+		}
+		void PlayAlarm()
+		{
+			axWindowsMediaPlayer.URL = alarm.Filename;
+			axWindowsMediaPlayer.settings.volume = 100;
+			axWindowsMediaPlayer.Ctlcontrols.play();
+			axWindowsMediaPlayer.Visible = true;
+		}
+		void SetPlayerInvisible(object sender, AxWMPLib._WMPOCXEvents_PlayStateChangeEvent e)
+		{
+			if (
+				axWindowsMediaPlayer.playState == WMPLib.WMPPlayState.wmppsMediaEnded ||
+				axWindowsMediaPlayer.playState == WMPLib.WMPPlayState.wmppsStopped
+				)
+				axWindowsMediaPlayer.Visible = false;
 		}
 		bool CompareDates(DateTime date1, DateTime date2)
 		{
